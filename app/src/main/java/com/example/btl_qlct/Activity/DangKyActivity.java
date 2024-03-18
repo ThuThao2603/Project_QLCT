@@ -21,7 +21,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class DangKyActivity extends AppCompatActivity {
 
-    // khai báo
+    // khai báo 1
     private TextView textDangNhap;
     private EditText editEmail,editTenDangNhap,editMatKhau;
     private Button buttonDangKy;
