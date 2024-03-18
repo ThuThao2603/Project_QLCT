@@ -1,4 +1,4 @@
-package com.example.btl_qlct.Model;
+package com.example.btl_qlct.Activity.Model;
 
 public class ChiTieuModel {
 

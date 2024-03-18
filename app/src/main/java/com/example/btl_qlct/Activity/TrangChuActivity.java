@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -13,8 +14,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class TrangChuActivity extends AppCompatActivity {
 
-    private TextView tvTenDangNhap;
-    private ImageView ivDangXuat,ivThongKe,ivHome;
+    private ImageButton ibHome,ibHanMuc,ibThongKe,ibDangXuat;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,13 +26,13 @@ public class TrangChuActivity extends AppCompatActivity {
     }
 
     private void unitUi(){
-        tvTenDangNhap =findViewById(R.id.tvTenDangNhap);
-        ivDangXuat= findViewById(R.id.ivDangXuat);
-        ivHome=findViewById(R.id.ivHome);
-        ivThongKe=findViewById(R.id.ivThongKe);
+        ibDangXuat= findViewById(R.id.ibDangXuat);
+        ibHome=findViewById(R.id.ibHome);
+        ibThongKe=findViewById(R.id.ibThongKe);
+
     }
     private void unitUilistener(){
-        ivDangXuat.setOnClickListener(new View.OnClickListener() {
+        ibDangXuat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 FirebaseAuth.getInstance().signOut();
@@ -41,10 +41,17 @@ public class TrangChuActivity extends AppCompatActivity {
                 finish();
             }
         });
-        ivHome.setOnClickListener(new View.OnClickListener() {
+        ibHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent= new Intent(TrangChuActivity.this,TrangChuActivity.class);
+                startActivity(intent);
+            }
+        });
+        ibThongKe.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent= new Intent(TrangChuActivity.this,ThongKeActivity.class);
                 startActivity(intent);
             }
         });

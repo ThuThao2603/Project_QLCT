@@ -8,25 +8,48 @@ import android.widget.ImageButton;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.btl_qlct.R;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class ThongKeActivity extends AppCompatActivity {
 
-    ImageButton btn_chitieu, btn_hanmuc, btn_baocao, btn_out;
+    private ImageButton ibHome,ibHanMuc,ibThongKe,ibDangXuat;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_tr_thong_ke);
+        setContentView(R.layout.activity_thong_ke);
 
-        btn_chitieu =findViewById(R.id.btn_chi_tieu);
-        btn_baocao =findViewById(R.id.btn_bao_cao);
-        btn_hanmuc = findViewById(R.id.btn_han_muc);
-        btn_out = findViewById(R.id.btn_out);
+        onClickListener();
+        unitUi();
 
-        btn_chitieu.setOnClickListener(this::clickChitieu);
     }
-
-    private void clickChitieu(View view) {
-        Intent intent = new Intent(ThongKeActivity.this, TrangChuActivity.class);
-        startActivity(intent);
+    private void unitUi(){
+        ibDangXuat= findViewById(R.id.ibDangXuat);
+        ibHome=findViewById(R.id.ibHome);
+        ibThongKe=findViewById(R.id.ibThongKe);
+    }
+    private void onClickListener(){
+        ibThongKe.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent= new Intent(ThongKeActivity.this, TrangChuActivity.class);
+                startActivity(intent);
+            }
+        });
+        ibDangXuat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FirebaseAuth.getInstance().signOut();
+                Intent intent= new Intent(ThongKeActivity.this, DangNhapActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+        ibHome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent= new Intent(ThongKeActivity.this,TrangChuActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }
