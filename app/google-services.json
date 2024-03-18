@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "756603758212",
+    "project_id": "qlct-project",
+    "storage_bucket": "qlct-project.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:756603758212:android:e486ea73cb050b12da84d1",
+        "android_client_info": {
+          "package_name": "com.example.btl_qlct"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyALbwbhHnfOUwWlhcubcrDS3rdVnqPnOzY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

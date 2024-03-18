@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="#F7F4E5">
+
+        <TextView
+            android:id="@+id/txt_chi_tieu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="11dp"
+            android:layout_weight="0"
+            android:text="Danh sách chi tiêu"
+            android:textColor="@color/black"
+            android:textSize="30dp" />
+
+        <ImageButton
+            android:id="@+id/btn_them"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="5dp"
+            android:layout_marginEnd="11dp"
+            android:layout_marginBottom="5dp"
+            android:background="#F7F4E5"
+            android:gravity="right"
+            android:src="@drawable/baseline_add_circle_outline_24">
+
+        </ImageButton>
+
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp">
+
+        <EditText
+            android:id="@+id/edt_tk"
+            android:layout_width="320dp"
+            android:layout_height="35dp"
+            android:background="@drawable/background_tk"
+            android:hint="Nhập nội dung tìm kiếm"
+            android:textSize="15dp">
+
+        </EditText>
+
+        <Button
+            android:id="@+id/btn_tk"
+            android:layout_width="70dp"
+            android:layout_height="30dp"
+            android:background="@drawable/background_button"
+            android:text="Tìm kiếm"
+            android:textSize="12dp"
+            android:textColor="@color/black"
+            android:layout_gravity="center"/>
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:id="@+id/ls_chitieu"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:orientation="horizontal"
+        android:background="#D9D9D9">
+        <ImageButton
+            android:id="@+id/btn_chi_tieu"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:layout_weight="1"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:src="@drawable/baseline_home_24">
+
+        </ImageButton>
+        <ImageButton
+            android:id="@+id/btn_bao_cao"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:layout_weight="1"
+            android:src="@drawable/baseline_equalizer_24">
+
+        </ImageButton>
+        <ImageButton
+            android:id="@+id/btn_han_muc"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:layout_weight="1"
+            android:src="@drawable/baseline_apps_24">
+
+        </ImageButton>
+        <ImageButton
+            android:id="@+id/btn_out"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:layout_weight="1"
+            android:src="@drawable/baseline_account_circle_24"></ImageButton>
+    </LinearLayout>
+</LinearLayout>
