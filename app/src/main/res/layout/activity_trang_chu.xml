@@ -55,8 +55,9 @@
             android:textSize="20dp"/>
 
         <ImageView
-            android:layout_width="20dp"
-            android:layout_height="20dp"
+            android:id="@+id/ivInsert"
+            android:layout_width="14dp"
+            android:layout_height="16dp"
             android:layout_alignBottom="@+id/tvName"
             android:layout_marginLeft="350dp"
             android:src="@drawable/icon_insert" />
@@ -67,7 +68,7 @@
             android:layout_alignBottom="@+id/tvName"
             android:layout_marginLeft="380dp"
             android:src="@drawable/icon_1"
-            />
+           />
     </RelativeLayout>
     <RelativeLayout
         android:layout_width="wrap_content"
@@ -109,43 +110,54 @@
             android:layout_marginStart="250dp"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="10dp"/>
-
     </RelativeLayout>
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/ls_chitieu"
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_weight="1" />
 
-    <RelativeLayout
-        android:id="@+id/item"
-        android:layout_width="410dp"
-        android:layout_height="60dp"
-        android:background="#D8D8D8"
-        android:gravity="center_vertical"
-        android:layout_marginTop="600dp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:orientation="horizontal"
+        android:background="#D9D9D9">
 
-        <ImageView
-            android:id="@+id/ivHome"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginStart="40dp"
-            android:src="@drawable/icon_home" />
+        <ImageButton
+            android:id="@+id/ibHome"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_weight="1"
+            android:src="@drawable/baseline_home_24">
+        </ImageButton>
 
-        <ImageView
-            android:id="@+id/ivThongKe"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginStart="140dp"
-            android:src="@drawable/icon_chart" />
+        <ImageButton
+            android:id="@+id/ibThongKe"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:layout_weight="1"
+            android:src="@drawable/baseline_equalizer_24">
 
-        <ImageView
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginStart="240dp"
-            android:src="@drawable/icon_apps" />
+        </ImageButton>
+        <ImageButton
+            android:id="@+id/ibHanMuc"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:layout_weight="1"
+            android:src="@drawable/baseline_apps_24">
 
-        <ImageView
-            android:id="@+id/ivDangXuat"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginStart="340dp"
-            android:src="@drawable/icon_person" />
-    </RelativeLayout>
+        </ImageButton>
+        <ImageButton
+            android:id="@+id/ibDangXuat"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:layout_weight="1"
+            android:src="@drawable/baseline_account_circle_24">
+        </ImageButton>
+    </LinearLayout>
 </LinearLayout>

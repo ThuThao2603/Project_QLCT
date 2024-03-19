@@ -58,7 +58,7 @@
 
     </LinearLayout>
 
-
+    //
     <com.github.mikephil.charting.charts.LineChart
         android:id="@+id/lineChart"
         android:layout_width="match_parent"
@@ -80,8 +80,8 @@
                 android:text="Tổng"
                 android:textSize="20dp"
                 android:layout_marginLeft="5dp"
-                android:textColor="#000"
-                ></TextView>
+                android:textColor="#000">
+                </TextView>
 
 
             <TextView
@@ -108,26 +108,27 @@
         android:layout_height="70dp"
         android:orientation="horizontal"
         android:background="#D9D9D9">
+
         <ImageButton
-            android:id="@+id/btn_chi_tieu"
+            android:id="@+id/ibHome"
             android:layout_width="0dp"
             android:layout_height="70dp"
-            android:layout_weight="1"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
+            android:layout_weight="1"
             android:src="@drawable/baseline_home_24">
 
         </ImageButton>
+
         <ImageButton
-            android:id="@+id/btn_bao_cao"
+            android:id="@+id/ibThongKe"
             android:layout_width="0dp"
             android:layout_height="70dp"
             android:layout_weight="1"
             android:src="@drawable/baseline_equalizer_24">
-
         </ImageButton>
         <ImageButton
-            android:id="@+id/btn_han_muc"
+            android:id="@+id/ibHanMuc"
             android:layout_width="0dp"
             android:layout_height="70dp"
             android:layout_weight="1"
@@ -135,10 +136,11 @@
 
         </ImageButton>
         <ImageButton
-            android:id="@+id/btn_out"
+            android:id="@+id/ibDangXuat"
             android:layout_width="0dp"
             android:layout_height="70dp"
             android:layout_weight="1"
-            android:src="@drawable/baseline_account_circle_24"></ImageButton>
+            android:src="@drawable/baseline_account_circle_24">
+        </ImageButton>
     </LinearLayout>
 </LinearLayout>

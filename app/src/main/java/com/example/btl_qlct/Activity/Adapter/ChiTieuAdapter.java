@@ -1,4 +1,4 @@
-package com.example.btl_qlct.Adapter;
+package com.example.btl_qlct.Activity.Adapter;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,10 +8,11 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.btl_qlct.Activity.Model.ChiTieuModel;
+import com.example.btl_qlct.R;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
-import com.testbtl123.btl123.Model.ChiTieuModel;
-import com.testbtl123.btl123.R;
+
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
