@@ -55,7 +55,7 @@ public class DangKyActivity extends AppCompatActivity {
     }
 
     private void setOnClickDangKy() {
-
+//678
         String strEmail=editEmail.getText().toString().trim();
         String strTenDangNhap= editTenDangNhap.getText().toString().trim();
         String strMatKhau= editMatKhau.getText().toString().trim();
