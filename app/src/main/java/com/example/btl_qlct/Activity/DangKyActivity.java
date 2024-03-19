@@ -21,7 +21,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class DangKyActivity extends AppCompatActivity {
 
-    // khai báo
+    // khai báo 1
     private TextView textDangNhap;
     private EditText editEmail,editTenDangNhap,editMatKhau;
     private Button buttonDangKy;
@@ -55,7 +55,7 @@ public class DangKyActivity extends AppCompatActivity {
     }
 
     private void setOnClickDangKy() {
-
+//678
         String strEmail=editEmail.getText().toString().trim();
         String strTenDangNhap= editTenDangNhap.getText().toString().trim();
         String strMatKhau= editMatKhau.getText().toString().trim();
