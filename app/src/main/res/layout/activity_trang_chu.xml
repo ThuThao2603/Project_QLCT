@@ -134,7 +134,6 @@
             android:layout_alignParentBottom="true"
             android:layout_weight="1"
             android:src="@drawable/baseline_home_24">
-
         </ImageButton>
 
         <ImageButton
