@@ -2,15 +2,27 @@ package com.example.btl_qlct.Activity.Model;
 
 public class ChiTieuModel {
 
-    String khoanchi, mota, ngay;
-    int sotien;
+    String khoanchi, mota, ngay, id_nguoidung, sotien;
 
 
-    public ChiTieuModel(String khoanchi, String mota, String ngay, int sotien) {
+
+    public ChiTieuModel(){
+
+    }
+    public ChiTieuModel(String khoanchi, String mota, String ngay, String id_nguoidung, String sotien) {
         this.khoanchi = khoanchi;
         this.mota = mota;
         this.ngay = ngay;
+        this.id_nguoidung = id_nguoidung;
         this.sotien = sotien;
+    }
+
+    public String getId_nguoidung() {
+        return id_nguoidung;
+    }
+
+    public void setId_nguoidung(String id_nguoidung) {
+        this.id_nguoidung = id_nguoidung;
     }
 
     public String getKhoanchi() {
@@ -37,11 +49,11 @@ public class ChiTieuModel {
         this.ngay = ngay;
     }
 
-    public int getSotien() {
+    public String getSotien() {
         return sotien;
     }
 
-    public void setSotien(int sotien) {
+    public void setSotien(String sotien) {
         this.sotien = sotien;
     }
 }

@@ -156,8 +156,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:background="@drawable/edit_text_round"
-            android:backgroundTint="#E8E5C4"
+            android:background="@drawable/background_button"
             android:text="Đăng Ký" />
 
         <TextView

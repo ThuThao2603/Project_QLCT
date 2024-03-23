@@ -54,10 +54,10 @@
             android:text="DANH SÁCH CHI TIÊU"
             android:textSize="20dp"/>
 
-        <ImageView
-            android:id="@+id/ivInsert"
-            android:layout_width="14dp"
-            android:layout_height="16dp"
+        <ImageButton
+            android:id="@+id/ibInsert"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
             android:layout_alignBottom="@+id/tvName"
             android:layout_marginLeft="350dp"
             android:src="@drawable/icon_insert" />

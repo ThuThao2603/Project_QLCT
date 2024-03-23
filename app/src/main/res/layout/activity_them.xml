@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:descendantFocusability="blocksDescendants"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_dialog"
+   >
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="10dp"
+            android:gravity="center"
+            android:text="Thêm chi tiêu"
+            android:textColor="#000000"
+            android:textSize="25dp"></TextView>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:text="Số tiên: "
+            android:textSize="17dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="10dp">
+
+        </TextView>
+
+        <EditText
+            android:id="@+id/edt_tien"
+            android:layout_width="230dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/background_edit_text"
+            android:textColor="@color/black"
+            android:textSize="20dp"></EditText>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        >
+
+        <TextView
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:text="Mô tả: "
+            android:textSize="17dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="10dp">
+
+        </TextView>
+
+        <EditText
+            android:id="@+id/edt_mo_ta"
+            android:layout_width="230dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/background_edit_text"
+            android:textColor="@color/black"
+            android:textSize="20dp"></EditText>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        >
+
+        <TextView
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:text="Ngày: "
+            android:textSize="17dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="10dp">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/txt_them_ngay"
+            android:layout_width="230dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/background_edit_text"
+            android:textColor="@color/black"
+            android:textSize="20dp"></TextView>
+
+        <ImageButton
+            android:background="@drawable/background_edit_text"
+            android:layout_marginLeft="0dp"
+            android:src="@drawable/baseline_all_inbox_24"
+            android:id="@+id/btn_lich"
+            android:layout_width="25dp"
+            android:layout_gravity="center_vertical"
+            android:layout_height="25dp">
+        </ImageButton>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp">
+
+        <TextView
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:text="Khoản chi: "
+            android:textSize="17dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="10dp">
+
+        </TextView>
+
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/Rdg">
+            <GridLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:columnCount="3">
+                <RadioButton
+                    android:id="@+id/rd_an"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Ăn uống"
+                    android:textSize="15dp"/>
+
+                <RadioButton
+                    android:id="@+id/rd_giaitri"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Giải trí" />
+                <RadioButton
+                    android:id="@+id/rd_mua"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Mua sắm" />
+                <RadioButton
+                    android:id="@+id/rd_hoctap"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Học tập" />
+                <RadioButton
+                    android:id="@+id/rd_codinh"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Cố định" />
+            </GridLayout>
+        </RadioGroup>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginTop="30dp"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/btn_them"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:background="@drawable/background_button"
+            android:text="Thêm"
+            android:layout_marginRight="50dp"
+            android:textColor="@color/black" />
+        <Button
+            android:id="@+id/btn_huy"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:background="@drawable/background_button"
+            android:text="Hủy"
+            android:textColor="@color/black" />
+
+
+    </LinearLayout>
+
+</LinearLayout>
