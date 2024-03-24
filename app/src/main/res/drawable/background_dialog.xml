@@ -4,12 +4,12 @@
     <item android:state_pressed="false">
         <shape>
             <!--màu nền button -->
-            <solid android:color="#ECE6C7"></solid>
+<!--            <solid android:color="#ECE6C7"></solid>-->
             <!--tạo viền cho button -->
             <stroke android:width="3dp"
                 android:color="@color/white"></stroke>
             <!--độ bo tròn 4 góc -->
-            <corners android:radius="35dp"></corners>
+<!--            <corners android:radius="35dp"></corners>-->
         </shape>
 
     </item>

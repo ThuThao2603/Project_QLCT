@@ -11,7 +11,7 @@
         android:layout_height="40dp"
         android:src="@drawable/shopping"
         android:layout_gravity="center"
-        android:id="@+id/img"
+        android:id="@+id/civ_image"
         app:civ_border_width="1.5dp"
         app:civ_border_color="#FF000000">
 
@@ -22,14 +22,14 @@
         android:orientation="vertical"
         android:layout_marginLeft="10dp">
         <TextView
-            android:id="@+id/txt_mota"
+            android:id="@+id/txt_MoTa"
             android:layout_width="wrap_content"
             android:layout_height="30dp"
             android:text="Mua áo"
             android:textSize="17dp">
             </TextView>
         <TextView
-            android:id="@+id/txt_ngay"
+            android:id="@+id/txt_Ngay"
             android:layout_width="wrap_content"
             android:layout_height="30dp"
             android:text="05/03/2024"
@@ -47,7 +47,7 @@
         android:layout_marginLeft="120dp">
 
         <TextView
-            android:id="@+id/txt_tien"
+            android:id="@+id/txt_Tien"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"

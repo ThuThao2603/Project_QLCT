@@ -4,7 +4,7 @@
     <item android:state_pressed="false">
         <shape>
             <!--màu nền button -->
-            <solid android:color="@color/white"></solid>
+            <solid android:color="#EAC7C7"></solid>
             <!--tạo viền cho button -->
 
             <!--độ bo tròn 4 góc -->

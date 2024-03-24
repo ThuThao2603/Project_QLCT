@@ -13,11 +13,16 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.btl_qlct.Activity.Adapter.ChiTieu_Adapter;
+import com.example.btl_qlct.Activity.Model.ChiTieuModel;
 import com.example.btl_qlct.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class DangKyActivity extends AppCompatActivity {
 
@@ -34,6 +39,9 @@ public class DangKyActivity extends AppCompatActivity {
 
         unitUi();
         unitListener();
+
+        List<ChiTieuModel> model= new ArrayList<>();
+        ChiTieu_Adapter adapter= new ChiTieu_Adapter(model);
     }
 
     private void unitListener() {

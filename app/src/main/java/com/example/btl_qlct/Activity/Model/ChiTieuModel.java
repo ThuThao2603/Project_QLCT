@@ -2,46 +2,58 @@ package com.example.btl_qlct.Activity.Model;
 
 public class ChiTieuModel {
 
-    String khoanchi, mota, ngay;
-    int sotien;
+    private String KhoanChi, MoTa, Ngay;
+    private int SoTien;
 
-
-    public ChiTieuModel(String khoanchi, String mota, String ngay, int sotien) {
-        this.khoanchi = khoanchi;
-        this.mota = mota;
-        this.ngay = ngay;
-        this.sotien = sotien;
+    public ChiTieuModel() {
     }
 
-    public String getKhoanchi() {
-        return khoanchi;
+    public ChiTieuModel(String khoanChi, String moTa, String ngay, int soTien) {
+        KhoanChi = khoanChi;
+        MoTa = moTa;
+        Ngay = ngay;
+        SoTien = soTien;
     }
 
-    public void setKhoanchi(String khoanchi) {
-        this.khoanchi = khoanchi;
+    public String getKhoanChi() {
+        return KhoanChi;
     }
 
-    public String getMota() {
-        return mota;
+    public void setKhoanChi(String khoanChi) {
+        KhoanChi = khoanChi;
     }
 
-    public void setMota(String mota) {
-        this.mota = mota;
+    public String getMoTa() {
+        return MoTa;
+    }
+
+    public void setMoTa(String moTa) {
+        MoTa = moTa;
     }
 
     public String getNgay() {
-        return ngay;
+        return Ngay;
     }
 
     public void setNgay(String ngay) {
-        this.ngay = ngay;
+        Ngay = ngay;
     }
 
-    public int getSotien() {
-        return sotien;
+    public int getSoTien() {
+        return SoTien;
     }
 
-    public void setSotien(int sotien) {
-        this.sotien = sotien;
+    public void setSoTien(int soTien) {
+        SoTien = soTien;
+    }
+
+    @Override
+    public String toString() {
+        return "ChiTieuModel{" +
+                "KhoanChi='" + KhoanChi + '\'' +
+                ", MoTa='" + MoTa + '\'' +
+                ", Ngay='" + Ngay + '\'' +
+                ", SoTien=" + SoTien +
+                '}';
     }
 }

@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E9E6C5">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Thêm chi tiêu"
+        android:textSize="25dp"
+        android:layout_marginTop="20dp"
+        android:gravity="center"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:gravity="center_horizontal">
+
+        <EditText
+            android:id="@+id/edSoTien"
+            android:layout_width="300dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:background="@drawable/edit_text_round"
+            android:hint="Số tiền"
+            android:paddingLeft="50dp"
+            android:textColorHint="#868C91"
+            />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:src="@drawable/baseline_attach_money_24"
+            android:paddingLeft="10dp"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:gravity="center_horizontal">
+
+        <EditText
+            android:id="@+id/edMoTa"
+            android:layout_width="300dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:background="@drawable/edit_text_round"
+            android:hint="Mô tả"
+            android:paddingLeft="50dp"
+            android:textColorHint="#868C91"
+            />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:src="@drawable/pen_color_24"
+            android:paddingLeft="10dp"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_margin="25dp"
+        android:gravity="center_horizontal"
+        >
+
+        <EditText
+            android:id="@+id/edNgay"
+            android:layout_width="300dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:background="@drawable/edit_text_round"
+            android:hint="...//...//..."
+            android:paddingLeft="50dp"
+            android:textColorHint="#868C91"
+            />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:src="@drawable/calendar_month_24"
+            android:paddingLeft="10dp"
+            />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Khoản chi "
+            android:textSize="17sp"
+            android:layout_margin="20dp"
+            android:layout_gravity="center_vertical"
+            />
+
+        <EditText
+            android:id="@+id/edKhoanChi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Khoản chi"/>
+    </LinearLayout>
+<!--        <RadioGroup-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:id="@+id/Rdg">-->
+<!--            <GridLayout-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:columnCount="2">-->
+<!--                <RadioButton-->
+<!--                    android:id="@+id/rd_an"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:text="Ăn uống"-->
+<!--                    android:textSize="15sp"/>-->
+
+<!--                <RadioButton-->
+<!--                    android:id="@+id/rd_giaitri"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:text="Giải trí" />-->
+<!--                <RadioButton-->
+<!--                    android:id="@+id/rd_mua"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:text="Mua sắm" />-->
+
+<!--                <RadioButton-->
+<!--                    android:id="@+id/rd_hoctap"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:text="Học tập" />-->
+<!--                <RadioButton-->
+<!--                    android:id="@+id/rd_codinh"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:text="Cố định" />-->
+
+
+</LinearLayout>
