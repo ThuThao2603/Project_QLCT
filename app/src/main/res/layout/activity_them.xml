@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
-    android:descendantFocusability="blocksDescendants"
+
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background_dialog"
@@ -45,9 +45,11 @@
             android:layout_height="60dp"
             android:layout_gravity="center_vertical"
             android:layout_marginRight="10dp"
+            android:hint="30000"
+            android:paddingLeft="15dp"
             android:background="@drawable/background_edit_text"
             android:textColor="@color/black"
-            android:textSize="20dp"></EditText>
+            android:textSize="20dp"/>
     </LinearLayout>
 
     <LinearLayout
@@ -74,9 +76,10 @@
             android:layout_height="60dp"
             android:layout_gravity="center_vertical"
             android:layout_marginRight="10dp"
+            android:paddingLeft="15dp"
             android:background="@drawable/background_edit_text"
             android:textColor="@color/black"
-            android:textSize="20dp"></EditText>
+            android:textSize="20dp"/>
     </LinearLayout>
 
     <LinearLayout
@@ -102,6 +105,8 @@
             android:layout_width="230dp"
             android:layout_height="60dp"
             android:layout_gravity="center_vertical"
+            android:paddingLeft="15dp"
+            android:paddingTop="15dp"
             android:layout_marginRight="10dp"
             android:background="@drawable/background_edit_text"
             android:textColor="@color/black"
@@ -137,48 +142,61 @@
 
         </TextView>
 
-        <RadioGroup
+        <GridLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/Rdg">
-            <GridLayout
+            android:columnCount="3">
+
+            <RadioGroup
+                android:id="@+id/Rdg"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:columnCount="3">
+                android:orientation="vertical"
+                >
+
                 <RadioButton
                     android:id="@+id/rd_an"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Ăn uống"
-                    android:textSize="15dp"/>
+                    android:textSize="18dp" />
 
                 <RadioButton
                     android:id="@+id/rd_giaitri"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Giải trí" />
+                    android:text="Giải trí"
+                    android:textSize="18dp"/>
+
                 <RadioButton
                     android:id="@+id/rd_mua"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Mua sắm" />
+                    android:text="Mua sắm"
+                    android:textSize="18dp"/>
+
                 <RadioButton
                     android:id="@+id/rd_hoctap"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Học tập" />
+                    android:text="Học tập"
+                    android:textSize="18dp"/>
+
                 <RadioButton
                     android:id="@+id/rd_codinh"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Cố định" />
-            </GridLayout>
-        </RadioGroup>
+                    android:text="Cố định"
+                    android:textSize="18dp"/>
+            </RadioGroup>
+
+        </GridLayout>
+
     </LinearLayout>
 
     <LinearLayout
