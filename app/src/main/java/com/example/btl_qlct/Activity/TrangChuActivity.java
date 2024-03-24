@@ -115,7 +115,7 @@ public class TrangChuActivity extends AppCompatActivity {
                             ChiTieuModel chiTieuModel = new ChiTieuModel(khoanChi,moTa,ngay,soTien);
                             ChiTieuModel model = null;
                             String User= String.valueOf(model.getSoTien());
-                            myRef.child(User).setValue()
+                            myRef.child(User).setValue();
 
                         }
                     })
