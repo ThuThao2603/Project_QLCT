@@ -28,6 +28,7 @@ import com.example.btl_qlct.R;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.Calendar;
 import java.util.HashMap;
@@ -39,9 +40,17 @@ import de.hdodenhof.circleimageview.CircleImageView;
 public class CTadapter extends RecyclerView.Adapter<CTadapter.myViewHolder> {
 
     private List<ChiTieuModel> chiTieuModels;
+    private iClick mIclick;
 
-    public CTadapter(List<ChiTieuModel> chiTieuModels) {
+    //khai báo để call sự kiện ra ngoài
+    public interface iClick{
+        void clickSua(ChiTieuModel chiTieuModel);
+        void clickXoa(ChiTieuModel chiTieuModel);
+    }
+
+    public CTadapter(List<ChiTieuModel> chiTieuModels, iClick click) {
         this.chiTieuModels = chiTieuModels;
+        this.mIclick = click;
     }
     Context context;
     String kc = "";
@@ -95,10 +104,22 @@ public class CTadapter extends RecyclerView.Adapter<CTadapter.myViewHolder> {
                     .into(holder.img);
         }
 
-
-
         //sửa
         holder.ibSua.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mIclick.clickSua(chiTieuModel);
+            }
+        });
+
+        //Xóa
+        holder.ibXoa.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mIclick.clickXoa(chiTieuModel);
+            }
+        });
+        /*holder.ibSua.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Dialog dialog = new Dialog(context);
@@ -205,12 +226,49 @@ public class CTadapter extends RecyclerView.Adapter<CTadapter.myViewHolder> {
                     }
                 });
 
-
-
                 dialog.show();
             }
         });
 
+        //xóa
+        holder.ibXoa.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Dialog dialog = new Dialog(context);
+                dialog.setContentView(R.layout.dialog_xoa);
+                Window window = dialog.getWindow();
+                window.setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.WRAP_CONTENT);
+
+                dialog.setCanceledOnTouchOutside(false);
+
+                Button btnXoa = dialog.findViewById(R.id.btn_xoa);
+                Button btnHuy = dialog.findViewById(R.id.btn_huy);
+
+                btnXoa.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        FirebaseDatabase database = FirebaseDatabase.getInstance();
+                        DatabaseReference myRef = database.getReference("ChiTieu");
+
+                        myRef.child(chiTieuModel.getId_chitieu()).removeValue(new DatabaseReference.CompletionListener() {
+                            @Override
+                            public void onComplete(@Nullable DatabaseError error, @NonNull DatabaseReference ref) {
+                                Toast.makeText(context, "Xóa thành công", Toast.LENGTH_SHORT).show();
+                                dialog.dismiss();
+                            }
+                        });
+
+                    }
+                });
+                btnHuy.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        dialog.dismiss();
+                    }
+                });
+                dialog.show();
+            }
+        });*/
     }
 
     @Override
@@ -235,7 +293,6 @@ public class CTadapter extends RecyclerView.Adapter<CTadapter.myViewHolder> {
             sotien = (TextView) itemView.findViewById(R.id.txt_tien);
             ibSua = itemView.findViewById(R.id.ibSua);
             ibXoa = itemView.findViewById(R.id.ibXoa);
-
         }
     }
 }

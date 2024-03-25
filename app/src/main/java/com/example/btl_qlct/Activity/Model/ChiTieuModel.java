@@ -1,5 +1,8 @@
 package com.example.btl_qlct.Activity.Model;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class ChiTieuModel {
 
     String khoanchi, mota, ngay, id_nguoidung, sotien, id_chitieu;
@@ -64,5 +67,19 @@ public class ChiTieuModel {
 
     public void setSotien(String sotien) {
         this.sotien = sotien;
+    }
+
+
+    //cập nhật nhiều thuộc tính của chi tiêu
+    public Map<String, Object> toMap(){
+        HashMap<String, Object> map = new HashMap<>();
+        map.put("khoanchi", khoanchi);
+        map.put("mota", mota);
+        map.put("ngay", ngay);
+        map.put("sotien", sotien);
+        //map.put("id_nguoidung", id_nguoidung);
+
+
+        return map;
     }
 }

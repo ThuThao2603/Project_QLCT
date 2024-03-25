@@ -48,6 +48,7 @@ public class ThemActivity extends AppCompatActivity {
         unitUi();
         getTextrd();
         addChiTieu();
+        huy();
 
     }
     private void unitUi(){
@@ -63,6 +64,9 @@ public class ThemActivity extends AppCompatActivity {
         rdMua = findViewById(R.id.rd_mua);
         rdHoc = findViewById(R.id.rd_hoctap);
         btn_them = findViewById(R.id.btn_them);
+        btn_huy = findViewById(R.id.btn_huy);
+
+
 
     }
     public void getTextrd(){
@@ -100,8 +104,6 @@ public class ThemActivity extends AppCompatActivity {
                             }
                         }, mYear, mMonth, mDay);
                 datePickerDialog.show();
-
-
     }
 
     private void addChiTieu(){
@@ -123,9 +125,10 @@ public class ThemActivity extends AppCompatActivity {
                 }else {
                     FirebaseDatabase database = FirebaseDatabase.getInstance();
                     DatabaseReference myRef = database.getReference("ChiTieu");
+                    //tạo khóa ngẫu nhiên
                     String id_chitieu = myRef.push().getKey();
                     ChiTieuModel chiTieuModel = new ChiTieuModel(khoanchi, mota, ngay, id_nguoidung, sotien, id_chitieu);
-                        myRef.push().setValue(chiTieuModel, new DatabaseReference.CompletionListener() {
+                        myRef.child(id_chitieu).setValue(chiTieuModel, new DatabaseReference.CompletionListener() {
                             @Override
                             public void onComplete(@Nullable DatabaseError error, @NonNull DatabaseReference ref) {
                                 Intent intent = new Intent(ThemActivity.this, TrangChuActivity.class);
@@ -140,6 +143,16 @@ public class ThemActivity extends AppCompatActivity {
         });
     }
 
+    public void huy() {
+        btn_huy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ThemActivity.this, TrangChuActivity.class);
+                startActivity(intent);
+            }
+        });
+
+    }
 
 
 
