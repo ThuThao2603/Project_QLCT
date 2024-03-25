@@ -13,6 +13,12 @@
         android:theme="@style/Theme.BTL_QLCT"
         tools:targetApi="24">
         <activity
+            android:name=".Activity.SuaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.Sua_XoaActivity"
+            android:exported="false" />
+        <activity
             android:name=".Activity.ThemActivity"
             android:exported="false" />
         <activity

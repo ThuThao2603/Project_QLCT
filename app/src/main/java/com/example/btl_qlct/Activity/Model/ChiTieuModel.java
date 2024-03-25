@@ -2,19 +2,28 @@ package com.example.btl_qlct.Activity.Model;
 
 public class ChiTieuModel {
 
-    String khoanchi, mota, ngay, id_nguoidung, sotien;
+    String khoanchi, mota, ngay, id_nguoidung, sotien, id_chitieu;
 
 
 
     public ChiTieuModel(){
 
     }
-    public ChiTieuModel(String khoanchi, String mota, String ngay, String id_nguoidung, String sotien) {
+    public ChiTieuModel(String khoanchi, String mota, String ngay, String id_nguoidung, String sotien, String id_chitieu) {
         this.khoanchi = khoanchi;
         this.mota = mota;
         this.ngay = ngay;
         this.id_nguoidung = id_nguoidung;
         this.sotien = sotien;
+        this.id_chitieu = id_chitieu;
+    }
+
+    public String getId_chitieu() {
+        return id_chitieu;
+    }
+
+    public void setId_chitieu(String id_chitieu) {
+        this.id_chitieu = id_chitieu;
     }
 
     public String getId_nguoidung() {

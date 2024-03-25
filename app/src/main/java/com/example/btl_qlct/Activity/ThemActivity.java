@@ -65,7 +65,7 @@ public class ThemActivity extends AppCompatActivity {
         btn_them = findViewById(R.id.btn_them);
 
     }
-    private void getTextrd(){
+    public void getTextrd(){
 
         if(rdAn.isChecked()){
             kc = rdAn.getText().toString().trim();
@@ -117,15 +117,14 @@ public class ThemActivity extends AppCompatActivity {
                 String khoanchi = kc.toString().trim();
                 String id_nguoidung = user.getUid();
 
+
                 if(sotien.equals("")||mota.equals("")||ngay.equals("")||khoanchi.equals("")){
                     Toast.makeText(ThemActivity.this,"Điền đầy đủ thông tin",Toast.LENGTH_SHORT).show();
                 }else {
-                    ChiTieuModel chiTieuModel = new ChiTieuModel(khoanchi, mota, ngay, id_nguoidung, sotien);
                     FirebaseDatabase database = FirebaseDatabase.getInstance();
                     DatabaseReference myRef = database.getReference("ChiTieu");
-                    int id = 1;
-                    String path = String.valueOf("ct" + id );
-
+                    String id_chitieu = myRef.push().getKey();
+                    ChiTieuModel chiTieuModel = new ChiTieuModel(khoanchi, mota, ngay, id_nguoidung, sotien, id_chitieu);
                         myRef.push().setValue(chiTieuModel, new DatabaseReference.CompletionListener() {
                             @Override
                             public void onComplete(@Nullable DatabaseError error, @NonNull DatabaseReference ref) {
@@ -135,7 +134,6 @@ public class ThemActivity extends AppCompatActivity {
                                 Toast.makeText(ThemActivity.this,"thêm thành công",Toast.LENGTH_LONG).show();
                             }
                         });
-
                 }
 
             }

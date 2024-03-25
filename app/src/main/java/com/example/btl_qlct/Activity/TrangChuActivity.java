@@ -29,7 +29,7 @@ import java.util.List;
 
 public class TrangChuActivity extends AppCompatActivity {
 
-    private ImageButton ibHome,ibHanMuc,ibThongKe,ibDangXuat, ibThem;
+    private ImageButton ibHome,ibHanMuc,ibThongKe,ibDangXuat, ibThem, ibSua, ibXoa;
     RecyclerView recyclerView;
 
     CTadapter cTadapter;
@@ -62,6 +62,8 @@ public class TrangChuActivity extends AppCompatActivity {
         ibThongKe=findViewById(R.id.ibThongKe);
 
         ibThem = findViewById(R.id.ibInsert);
+        ibSua = findViewById(R.id.ibSua);
+        ibXoa = findViewById(R.id.ibXoa);
 
 
         recyclerView = findViewById(R.id.ls_chitieu);
@@ -139,6 +141,8 @@ public class TrangChuActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+
 
     }
 }
