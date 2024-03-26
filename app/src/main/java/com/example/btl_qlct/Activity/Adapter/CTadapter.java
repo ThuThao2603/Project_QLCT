@@ -11,6 +11,7 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.Filter;
 import android.widget.ImageButton;
 import android.widget.RadioButton;
 import android.widget.TextView;
@@ -28,6 +29,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashMap;
 import java.util.List;
@@ -39,6 +41,7 @@ public class CTadapter extends RecyclerView.Adapter<CTadapter.myViewHolder> {
 
     private List<ChiTieuModel> chiTieuModels;
     private iClick mIclick;
+    private List<ChiTieuModel> chiTieuModelsOld;
 
     //khai báo để call sự kiện ra ngoài
     public interface iClick{
@@ -49,6 +52,7 @@ public class CTadapter extends RecyclerView.Adapter<CTadapter.myViewHolder> {
     public CTadapter(List<ChiTieuModel> chiTieuModels, iClick click) {
         this.chiTieuModels = chiTieuModels;
         this.mIclick = click;
+        this.chiTieuModelsOld= chiTieuModels;
     }
     Context context;
     String kc = "";
@@ -117,156 +121,6 @@ public class CTadapter extends RecyclerView.Adapter<CTadapter.myViewHolder> {
                 mIclick.clickXoa(chiTieuModel);
             }
         });
-        /*holder.ibSua.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Dialog dialog = new Dialog(context);
-                dialog.setContentView(R.layout.dialog_sua);
-                Window window = dialog.getWindow();
-                window.setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.WRAP_CONTENT);
-
-                dialog.setCanceledOnTouchOutside(false);
-
-                Button btnSua = dialog.findViewById(R.id.btn_sua);
-                Button btnHuy = dialog.findViewById(R.id.btn_huy);
-
-                EditText sotien1 = dialog.findViewById(R.id.edt_tien_sua);
-                EditText mota1 = dialog.findViewById(R.id.edt_mo_ta_sua);
-                TextView ngay1 = dialog.findViewById(R.id.txt_them_ngay_sua);
-                ImageButton btn_ngay1 = dialog.findViewById(R.id.btn_lich_sua);
-                RadioButton rdAn, rdMua, rdHoc, rdCo, rdGiai;
-                rdAn = dialog.findViewById(R.id.rd_an);
-                rdMua = dialog.findViewById(R.id.rd_mua);
-                rdHoc = dialog.findViewById(R.id.rd_hoctap);
-                rdCo = dialog.findViewById(R.id.rd_codinh);
-                rdGiai = dialog.findViewById(R.id.rd_giaitri);
-                btn_ngay1.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        mYear = c1.get(Calendar.YEAR);
-                        mMonth = c1.get(Calendar.MONTH);
-                        mDay = c1.get(Calendar.DAY_OF_MONTH);
-                        //xử lý sự kiện trên datepickerDialog
-                        datePickerDialog = new DatePickerDialog(context,
-                                new DatePickerDialog.OnDateSetListener() {
-                                    @Override
-                                    public void onDateSet(DatePicker datePicker, int y, int mm, int dd) {
-                                        //set hiển thị lên text view
-                                        ngay1.setText(dd + "/" + (mm + 1) + "/" + y);
-                                    }
-                                }, mYear, mMonth, mDay);
-                        datePickerDialog.show();
-                    }
-                });
-
-                sotien1.setText(chiTieuModel.getSotien());
-                mota1.setText(chiTieuModel.getMota());
-                ngay1.setText(chiTieuModel.getNgay());
-                if(chiTieuModel.getKhoanchi().equals("Ăn uống")){
-                    rdAn.setChecked(true);
-                }
-                if(chiTieuModel.getKhoanchi().equals("Mua sắm")){
-                    rdMua.setChecked(true);
-                }
-                if(chiTieuModel.getKhoanchi().equals("Học tập")){
-                    rdHoc.setChecked(true);
-                }
-                if(chiTieuModel.getKhoanchi().equals("Cố định")){
-                    rdCo.setChecked(true);
-                }
-                if(chiTieuModel.getKhoanchi().equals("Giải trí")){
-                    rdGiai.setChecked(true);
-                }
-
-
-
-                btnSua.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        if(rdAn.isChecked()){
-                            kc = rdAn.getText().toString().trim();
-                        }
-                        if(rdCo.isChecked()){
-                            kc = rdCo.getText().toString().trim();
-                        }
-                        if(rdGiai.isChecked()){
-                            kc = rdGiai.getText().toString().trim();
-                        }
-                        if(rdHoc.isChecked()){
-                            kc = rdHoc.getText().toString().trim();
-                        }
-                        if(rdMua.isChecked()){
-                            kc = rdMua.getText().toString().trim();
-                        }
-                        Map<String, Object> map = new HashMap<>();
-                        map.put("khoanchi", kc);
-                        map.put("mota",mota1.getText().toString());
-                        map.put("sotien",sotien1.getText().toString());
-                        map.put("ngay", ngay1.getText().toString());
-                        map.put("id_nguoidung", chiTieuModel.getId_nguoidung());
-
-                        FirebaseDatabase database = FirebaseDatabase.getInstance();
-                        DatabaseReference myRef = database.getReference("ChiTieu");
-
-                        myRef.child(chiTieuModel.getId_chitieu()).updateChildren(map, new DatabaseReference.CompletionListener() {
-                            @Override
-                            public void onComplete(@Nullable DatabaseError error, @NonNull DatabaseReference ref) {
-                                Toast.makeText(context, "Sửa thành công", Toast.LENGTH_SHORT).show();
-                                dialog.dismiss();
-                            }
-                        });
-                    }
-                });
-                btnHuy.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        dialog.dismiss();
-                    }
-                });
-
-                dialog.show();
-            }
-        });
-
-        //xóa
-        holder.ibXoa.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Dialog dialog = new Dialog(context);
-                dialog.setContentView(R.layout.dialog_xoa);
-                Window window = dialog.getWindow();
-                window.setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.WRAP_CONTENT);
-
-                dialog.setCanceledOnTouchOutside(false);
-
-                Button btnXoa = dialog.findViewById(R.id.btn_xoa);
-                Button btnHuy = dialog.findViewById(R.id.btn_huy);
-
-                btnXoa.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        FirebaseDatabase database = FirebaseDatabase.getInstance();
-                        DatabaseReference myRef = database.getReference("ChiTieu");
-
-                        myRef.child(chiTieuModel.getId_chitieu()).removeValue(new DatabaseReference.CompletionListener() {
-                            @Override
-                            public void onComplete(@Nullable DatabaseError error, @NonNull DatabaseReference ref) {
-                                Toast.makeText(context, "Xóa thành công", Toast.LENGTH_SHORT).show();
-                                dialog.dismiss();
-                            }
-                        });
-
-                    }
-                });
-                btnHuy.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        dialog.dismiss();
-                    }
-                });
-                dialog.show();
-            }
-        });*/
     }
 
     @Override
@@ -292,5 +146,39 @@ public class CTadapter extends RecyclerView.Adapter<CTadapter.myViewHolder> {
             ibSua = itemView.findViewById(R.id.ibSua);
             ibXoa = itemView.findViewById(R.id.ibXoa);
         }
+    }
+    public Filter getFilter() {
+        return new Filter() {
+            @Override
+            protected FilterResults performFiltering(CharSequence constraint) {
+                String strSearch = constraint.toString();
+                System.out.println("test: " + strSearch);
+                // check chưa điền kí tự hoặc xóa hết đi
+                if(strSearch.isEmpty()){
+                    chiTieuModels=chiTieuModelsOld;
+                }else{
+                    List<ChiTieuModel> list= new ArrayList<>();
+                    for(ChiTieuModel model : chiTieuModelsOld){
+                        // nếu tên model chứa kí tự ta search thì ta add nó vào list
+                        if(model.getMota().toLowerCase().contains(strSearch.toLowerCase())){
+                            list.add(model);
+                        }
+                    }
+                    // cho về kqua
+                    chiTieuModels=list;
+                }
+                FilterResults filterResults= new FilterResults();
+                // chả về
+                filterResults.values=chiTieuModels;
+                return filterResults;
+            }
+
+            @Override
+            protected void publishResults(CharSequence constraint, FilterResults results) {
+                chiTieuModels= (List<ChiTieuModel>) results.values;
+                //nhận bt thay đổi
+                notifyDataSetChanged();
+            }
+        };
     }
 }

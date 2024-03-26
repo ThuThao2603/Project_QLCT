@@ -11,6 +11,8 @@ import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -23,6 +25,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.btl_qlct.Activity.Adapter.CTadapter;
+import com.example.btl_qlct.Activity.Adapter.ChiTieuAdapter;
 import com.example.btl_qlct.Activity.Model.ChiTieuModel;
 import com.example.btl_qlct.R;
 import com.google.firebase.auth.FirebaseAuth;
@@ -44,9 +47,11 @@ import java.util.Map;
 public class TrangChuActivity extends AppCompatActivity {
 
     private ImageButton ibHome,ibHanMuc,ibThongKe,ibDangXuat, ibThem, ibSua, ibXoa;
+    private  EditText edSearch;
     RecyclerView recyclerView;
 
     CTadapter cTadapter;
+
     DatePickerDialog datePickerDialog;
     int  mYear, mMonth, mDay;
     final Calendar c1 = Calendar.getInstance();
@@ -72,6 +77,7 @@ public class TrangChuActivity extends AppCompatActivity {
         ibThem = findViewById(R.id.ibInsert);
         ibSua = findViewById(R.id.ibSua);
         ibXoa = findViewById(R.id.ibXoa);
+        edSearch= findViewById(R.id.edSearch);
 
 
         recyclerView = findViewById(R.id.ls_chitieu);
@@ -337,6 +343,26 @@ public class TrangChuActivity extends AppCompatActivity {
             }
         });
 
+        edSearch.addTextChangedListener(new TextWatcher() {
+            @Override
+            //trc khi thay đổi
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            //khi thay đổi
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                //charSequence s = charSequence constraint
+                cTadapter.getFilter().filter(s);
+            }
+
+            @Override
+            //sau khi thay đổi
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
 
 
     }
