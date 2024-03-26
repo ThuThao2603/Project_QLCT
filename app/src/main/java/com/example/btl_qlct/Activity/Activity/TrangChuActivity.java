@@ -80,61 +80,61 @@ public class TrangChuActivity extends AppCompatActivity {
         Query query = myRef.orderByChild("id_nguoidung").equalTo(user.getUid());
 
 //        cách 1
-//        query.addValueEventListener(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(@NonNull DataSnapshot snapshot) {
-//                //xóa dữ liệu
-//                if(chiTieuModelList !=null){
-//                    chiTieuModelList.clear();
-//                }
-//                //chạy vòng lặp add dữ liệu vào chitieumodel
-//                for (DataSnapshot dataSnapshot: snapshot.getChildren()){
-//                    ChiTieuModel chiTieuModel = dataSnapshot.getValue(ChiTieuModel.class);
-//                    chiTieuModelList.add(chiTieuModel);
-//                }
-//                cTadapter.notifyDataSetChanged();
-//            }
-//
-//            @Override
-//            public void onCancelled(@NonNull DatabaseError error) {
-//                Toast.makeText(TrangChuActivity.this,"Lỗi",Toast.LENGTH_SHORT).show();
-//            }
-//        });
-        //cách 2
-        myRef.addChildEventListener(new ChildEventListener() {
+        query.addValueEventListener(new ValueEventListener() {
             @Override
-            public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-                // get 1 user
-                ChiTieuModel chiTieuModel = snapshot.getValue(ChiTieuModel.class);
-                //check user get != null -> add vào list
-                if(chiTieuModel!=null){
-//                    if(chiTieuModel.getKhoanchi().contains(khoanchi)){
-                        chiTieuModelList.add(chiTieuModel);
-//                    }
-                    CTAdapter.notifyDataSetChanged();
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                //xóa dữ liệu
+                if(chiTieuModelList !=null){
+                    chiTieuModelList.clear();
                 }
-            }
-
-            @Override
-            public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-
-            }
-
-            @Override
-            public void onChildRemoved(@NonNull DataSnapshot snapshot) {
-
-            }
-
-            @Override
-            public void onChildMoved(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-
+                //chạy vòng lặp add dữ liệu vào chitieumodel
+                for (DataSnapshot dataSnapshot: snapshot.getChildren()){
+                    ChiTieuModel chiTieuModel = dataSnapshot.getValue(ChiTieuModel.class);
+                    chiTieuModelList.add(chiTieuModel);
+                }
+                CTAdapter.notifyDataSetChanged();
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                
+                Toast.makeText(TrangChuActivity.this,"Lỗi",Toast.LENGTH_SHORT).show();
             }
         });
+        //cách 2
+//        myRef.addChildEventListener(new ChildEventListener() {
+//            @Override
+//            public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+//                // get 1 user
+//                ChiTieuModel chiTieuModel = snapshot.getValue(ChiTieuModel.class);
+//                //check user get != null -> add vào list
+//                if(chiTieuModel!=null){
+////                    if(chiTieuModel.getKhoanchi().contains(khoanchi)){
+//                        chiTieuModelList.add(chiTieuModel);
+////                    }
+//                    CTAdapter.notifyDataSetChanged();
+//                }
+//            }
+
+//            @Override
+//            public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+//
+//            }
+//
+//            @Override
+//            public void onChildRemoved(@NonNull DataSnapshot snapshot) {
+//
+//            }
+//
+//            @Override
+//            public void onChildMoved(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+//
+//            }
+//
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError error) {
+//
+//            }
+//        });
     }
 
     @Override
