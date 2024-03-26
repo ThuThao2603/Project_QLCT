@@ -1,4 +1,4 @@
-package com.example.btl_qlct.Activity;
+package com.example.btl_qlct.Activity.Activity;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -23,7 +23,7 @@ public class DangKyActivity extends AppCompatActivity {
 
     // khai báo 1
     private TextView textDangNhap;
-    private EditText editEmail,editTenDangNhap,editMatKhau;
+    private EditText editEmail,editMatKhau;
     private Button buttonDangKy;
     private ProgressDialog progressDialog;
 
@@ -57,12 +57,11 @@ public class DangKyActivity extends AppCompatActivity {
     private void setOnClickDangKy() {
 //678
         String strEmail=editEmail.getText().toString().trim();
-        String strTenDangNhap= editTenDangNhap.getText().toString().trim();
         String strMatKhau= editMatKhau.getText().toString().trim();
 
         FirebaseAuth auth= FirebaseAuth.getInstance();
 
-        if(TextUtils.isEmpty(strEmail) && TextUtils.isEmpty(strMatKhau) && TextUtils.isEmpty(strTenDangNhap)) {
+        if(TextUtils.isEmpty(strEmail) && TextUtils.isEmpty(strMatKhau)) {
 
             Toast.makeText(DangKyActivity.this,"Nhập đầy đủ thông tin!",Toast.LENGTH_SHORT).show();
 
@@ -78,13 +77,11 @@ public class DangKyActivity extends AppCompatActivity {
 
                             progressDialog.dismiss();
                             if (task.isSuccessful()) {
-
                                 Intent intent = new Intent(DangKyActivity.this, TrangChuActivity.class);
                                 startActivity(intent);
 
                                 finishAffinity();
                             } else {
-
                                 Toast.makeText(DangKyActivity.this, "Kiểm tra lại thông tin đăng ký.", Toast.LENGTH_SHORT).show();
                             }
                         }
@@ -97,7 +94,6 @@ public class DangKyActivity extends AppCompatActivity {
         // ánh xạ
         textDangNhap= findViewById(R.id.tvDangNhap);
         editEmail=findViewById(R.id.edEmail);
-        editTenDangNhap=findViewById(R.id.edTenDangNhap);
         editMatKhau=findViewById(R.id.edMatKhau);
         buttonDangKy=findViewById(R.id.btDangKy);
         progressDialog=new ProgressDialog(this);

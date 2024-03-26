@@ -1,4 +1,4 @@
-package com.example.btl_qlct.Activity;
+package com.example.btl_qlct.Activity.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,8 +6,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
-import android.widget.ImageView;
-import android.widget.TextView;
 
 import com.example.btl_qlct.R;
 import com.google.firebase.auth.FirebaseAuth;

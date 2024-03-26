@@ -13,7 +13,7 @@
         android:theme="@style/Theme.BTL_QLCT"
         tools:targetApi="24">
         <activity
-            android:name=".Activity.ThemActivity"
+            android:name=".Activity.Activity.InsertActivity"
             android:exported="false" />
         <activity
             android:name=".Activity.tr_them"
@@ -22,19 +22,19 @@
             android:name=".tr_them"
             android:exported="false" />
         <activity
-            android:name=".Activity.ThongKeActivity"
+            android:name=".Activity.Activity.ThongKeActivity"
             android:exported="false" />
         <activity
-            android:name=".Activity.DangNhapActivity"
+            android:name=".Activity.Activity.DangNhapActivity"
             android:exported="false" />
         <activity
-            android:name=".Activity.DangKyActivity"
+            android:name=".Activity.Activity.DangKyActivity"
             android:exported="false" />
         <activity
-            android:name=".Activity.TrangChuActivity"
+            android:name=".Activity.Activity.TrangChuActivity"
             android:exported="false" />
         <activity
-            android:name=".Activity.SplashActivity"
+            android:name=".Activity.Activity.SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

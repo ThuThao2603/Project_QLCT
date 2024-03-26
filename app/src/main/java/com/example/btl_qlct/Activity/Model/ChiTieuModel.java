@@ -4,11 +4,7 @@ public class ChiTieuModel {
 
     String khoanchi, mota, ngay, id_nguoidung, sotien;
 
-
-
-    public ChiTieuModel(){
-
-    }
+    public ChiTieuModel(){ }
     public ChiTieuModel(String khoanchi, String mota, String ngay, String id_nguoidung, String sotien) {
         this.khoanchi = khoanchi;
         this.mota = mota;
@@ -55,5 +51,16 @@ public class ChiTieuModel {
 
     public void setSotien(String sotien) {
         this.sotien = sotien;
+    }
+
+    @Override
+    public String toString() {
+        return "ChiTieuModel{" +
+                "khoanchi='" + khoanchi + '\'' +
+                ", mota='" + mota + '\'' +
+                ", ngay='" + ngay + '\'' +
+                ", id_nguoidung='" + id_nguoidung + '\'' +
+                ", sotien='" + sotien + '\'' +
+                '}';
     }
 }
