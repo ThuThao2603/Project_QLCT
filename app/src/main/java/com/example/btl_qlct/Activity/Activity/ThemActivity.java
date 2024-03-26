@@ -26,16 +26,17 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.Calendar;
 
-public class InsertActivity extends AppCompatActivity {
+public class ThemActivity extends AppCompatActivity {
+
     EditText ed_sotien, ed_mota;
     TextView txt_ngay;
     String kc = "";
     ImageButton btnlich;
-    Button btn_them,btn_huy;
+    Button btn_them, btn_huy;
     RadioButton rdAn, rdMua, rdHoc, rdCo, rdGiai;
     DatePickerDialog datePickerDialog;
     int  mYear, mMonth, mDay;
-    final Calendar calendar = Calendar.getInstance();
+    final Calendar c1 = Calendar.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,10 +46,13 @@ public class InsertActivity extends AppCompatActivity {
         unitUi();
         getTextrd();
         addChiTieu();
+        huy();
+
     }
     private void unitUi(){
         ed_mota = findViewById(R.id.edt_mo_ta);
         ed_sotien = findViewById(R.id.edt_tien);
+
         txt_ngay = findViewById(R.id.txt_them_ngay);
         btnlich = findViewById(R.id.btn_lich);
         btnlich.setOnClickListener(this::clickngay);
@@ -58,34 +62,38 @@ public class InsertActivity extends AppCompatActivity {
         rdMua = findViewById(R.id.rd_mua);
         rdHoc = findViewById(R.id.rd_hoctap);
         btn_them = findViewById(R.id.btn_them);
-        btn_huy=findViewById(R.id.btn_huy);
+        btn_huy = findViewById(R.id.btn_huy);
+
+
+
     }
-    private void getTextrd(){
+    public void getTextrd(){
 
         if(rdAn.isChecked()){
             kc = rdAn.getText().toString().trim();
         }
-        else if(rdCo.isChecked()){
+        if(rdCo.isChecked()){
             kc = rdCo.getText().toString().trim();
         }
-        else if(rdGiai.isChecked()){
+        if(rdGiai.isChecked()){
             kc = rdGiai.getText().toString().trim();
         }
-        else if(rdHoc.isChecked()){
+        if(rdHoc.isChecked()){
             kc = rdHoc.getText().toString().trim();
         }
-        else if(rdMua.isChecked()){
+        if(rdMua.isChecked()){
             kc = rdMua.getText().toString().trim();
         }
+
     }
 
     private void clickngay (View view) {
                 //lấy ra ngày tháng năm hiện tại
-                mYear = calendar.get(Calendar.YEAR);
-                mMonth = calendar.get(Calendar.MONTH);
-                mDay = calendar.get(Calendar.DAY_OF_MONTH);
+                mYear = c1.get(Calendar.YEAR);
+                mMonth = c1.get(Calendar.MONTH);
+                mDay = c1.get(Calendar.DAY_OF_MONTH);
                 //xử lý sự kiện trên datepickerDialog
-                datePickerDialog = new DatePickerDialog(InsertActivity.this,
+                datePickerDialog = new DatePickerDialog(ThemActivity.this,
                         new DatePickerDialog.OnDateSetListener() {
                             @Override
                             public void onDateSet(DatePicker datePicker, int y, int mm, int dd) {
@@ -109,37 +117,40 @@ public class InsertActivity extends AppCompatActivity {
                 String khoanchi = kc.toString().trim();
                 String id_nguoidung = user.getUid();
 
+
                 if(sotien.equals("")||mota.equals("")||ngay.equals("")||khoanchi.equals("")){
-                    Toast.makeText(InsertActivity.this,"Điền đầy đủ thông tin",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ThemActivity.this,"Điền đầy đủ thông tin",Toast.LENGTH_SHORT).show();
                 }else {
-                    ChiTieuModel chiTieuModel = new ChiTieuModel(khoanchi, mota, ngay, id_nguoidung, sotien);
                     FirebaseDatabase database = FirebaseDatabase.getInstance();
                     DatabaseReference myRef = database.getReference("ChiTieu");
-                    int id = 1;
-
-                    String path = String.valueOf("Chi Tiêu" + id );
-
-                        myRef.push().setValue(chiTieuModel, new DatabaseReference.CompletionListener() {
+                    //tạo khóa ngẫu nhiên
+                    String id_chitieu = myRef.push().getKey();
+                    ChiTieuModel chiTieuModel = new ChiTieuModel(khoanchi, mota, ngay, id_nguoidung, sotien, id_chitieu);
+                        myRef.child(id_chitieu).setValue(chiTieuModel, new DatabaseReference.CompletionListener() {
                             @Override
                             public void onComplete(@Nullable DatabaseError error, @NonNull DatabaseReference ref) {
-                                Intent intent = new Intent(InsertActivity.this, TrangChuActivity.class);
+                                Intent intent = new Intent(ThemActivity.this, TrangChuActivity.class);
                                 startActivity(intent);
 
-                                Toast.makeText(InsertActivity.this,"Thêm thành công!",Toast.LENGTH_LONG).show();
+                                Toast.makeText(ThemActivity.this,"thêm thành công",Toast.LENGTH_LONG).show();
                             }
                         });
                 }
-            }
-        });
-        btn_huy.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent=new Intent(InsertActivity.this, TrangChuActivity.class);
-                startActivity(intent);
+
             }
         });
     }
 
+    public void huy() {
+        btn_huy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ThemActivity.this, TrangChuActivity.class);
+                startActivity(intent);
+            }
+        });
+
+    }
 
 
 

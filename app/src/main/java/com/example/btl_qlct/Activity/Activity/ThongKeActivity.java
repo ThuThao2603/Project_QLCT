@@ -42,7 +42,7 @@ public class ThongKeActivity extends AppCompatActivity {
         ibHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent= new Intent(ThongKeActivity.this,TrangChuActivity.class);
+                Intent intent= new Intent(ThongKeActivity.this, TrangChuActivity.class);
                 startActivity(intent);
             }
         });

@@ -13,13 +13,7 @@
         android:theme="@style/Theme.BTL_QLCT"
         tools:targetApi="24">
         <activity
-            android:name=".Activity.Activity.InsertActivity"
-            android:exported="false" />
-        <activity
-            android:name=".Activity.tr_them"
-            android:exported="false" />
-        <activity
-            android:name=".tr_them"
+            android:name=".Activity.Activity.ThemActivity"
             android:exported="false" />
         <activity
             android:name=".Activity.Activity.ThongKeActivity"
