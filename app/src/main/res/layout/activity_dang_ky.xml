@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="#E9E6C5"
     android:backgroundTint="#E9E6C5"
-    tools:context=".Activity.TrangChuActivity"
+    tools:context=".Activity.Activity.TrangChuActivity"
     android:orientation="vertical">
 
     <TextView
@@ -73,32 +73,6 @@
         android:gravity="center_horizontal">
 
         <EditText
-            android:id="@+id/edTenDangNhap"
-            android:layout_width="300dp"
-            android:layout_height="40dp"
-            android:background="@drawable/edit_text_round"
-            android:layout_gravity="center"
-            android:paddingLeft="50dp"
-            android:hint="Tên đăng nhập"
-            android:textColorHint="#868C91"
-
-            />
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="40dp"
-            android:src="@drawable/icon_person"
-            android:paddingLeft="10dp"/>
-
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:gravity="center_horizontal">
-
-        <EditText
             android:id="@+id/edMatKhau"
             android:layout_width="300dp"
             android:layout_height="40dp"
@@ -153,8 +127,8 @@
 
         <Button
             android:id="@+id/btDangKy"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
             android:layout_centerHorizontal="true"
             android:background="@drawable/background_button"
             android:text="Đăng Ký" />
