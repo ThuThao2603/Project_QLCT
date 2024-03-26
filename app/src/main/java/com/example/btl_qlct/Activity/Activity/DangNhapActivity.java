@@ -1,4 +1,4 @@
-package com.example.btl_qlct.Activity;
+package com.example.btl_qlct.Activity.Activity;
 
 import android.content.Intent;
 import android.os.Bundle;

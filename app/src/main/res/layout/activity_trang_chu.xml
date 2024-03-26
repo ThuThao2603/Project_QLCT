@@ -5,7 +5,6 @@
     android:orientation="vertical"
     android:id="@+id/trangchu">
 
-
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -75,38 +74,40 @@
         android:layout_height="wrap_content"
         android:gravity="center_vertical">
 
-        <TextView
-            android:id="@+id/tvSearch"
+        <EditText
+            android:id="@+id/edSearch"
             android:layout_width="350dp"
             android:layout_height="40dp"
             android:background="@drawable/edit_text_round"
-            android:layout_marginLeft="30dp" />
+            android:layout_marginLeft="30dp"
+            android:hint="Tìm kiếm"
+            android:paddingLeft="40dp"/>
 
         <ImageView
             android:id="@+id/icon_search"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignStart="@+id/tvSearch"
+            android:layout_alignStart="@+id/edSearch"
             android:layout_marginStart="10dp"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="10dp"
             android:src="@drawable/icon_search" />
 
-        <TextView
-            android:id="@+id/tvTK"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Tìm kiếm"
-            android:layout_alignStart="@+id/icon_search"
-            android:layout_marginLeft="50dp"
-            android:layout_marginTop="10dp"
-            android:textColor="#757272"
-            android:layout_marginBottom="10dp"/>
+<!--        <TextView-->
+<!--            android:id="@+id/tvTK"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:hint="Tìm kiếm"-->
+<!--            android:layout_alignStart="@+id/icon_search"-->
+<!--            android:layout_marginLeft="50dp"-->
+<!--            android:layout_marginTop="10dp"-->
+<!--            android:textColor="#757272"-->
+<!--            android:layout_marginBottom="10dp"/>-->
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/icon_lood"
-            android:layout_alignStart="@+id/tvTK"
+            android:layout_alignEnd="@+id/edSearch"
             android:layout_marginStart="250dp"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="10dp"/>
