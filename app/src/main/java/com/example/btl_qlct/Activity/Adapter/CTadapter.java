@@ -22,8 +22,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.btl_qlct.Activity.Model.ChiTieuModel;
-import com.example.btl_qlct.Activity.ThemActivity;
-import com.example.btl_qlct.Activity.TrangChuActivity;
 import com.example.btl_qlct.R;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
