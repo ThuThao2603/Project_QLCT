@@ -54,6 +54,7 @@ public class CTadapter extends RecyclerView.Adapter<CTadapter.myViewHolder> {
         this.mIclick = click;
         this.chiTieuModelsOld= chiTieuModels;
     }
+
     Context context;
     String kc = "";
     DatePickerDialog datePickerDialog;

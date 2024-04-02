@@ -64,9 +64,7 @@ public class DangKyActivity extends AppCompatActivity {
         if(TextUtils.isEmpty(strEmail) && TextUtils.isEmpty(strMatKhau)) {
 
             Toast.makeText(DangKyActivity.this,"Nhập đầy đủ thông tin!",Toast.LENGTH_SHORT).show();
-
         }else {
-
             progressDialog.show();
             auth.createUserWithEmailAndPassword(strEmail, strMatKhau)
                     .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
@@ -88,7 +86,6 @@ public class DangKyActivity extends AppCompatActivity {
                     });
         }
     }
-
     //khai báo ánh xạ
     private void unitUi(){
         // ánh xạ

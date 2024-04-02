@@ -145,14 +145,7 @@
             android:src="@drawable/baseline_equalizer_24">
 
         </ImageButton>
-        <ImageButton
-            android:id="@+id/ibHanMuc"
-            android:layout_width="0dp"
-            android:layout_height="70dp"
-            android:layout_weight="1"
-            android:src="@drawable/baseline_apps_24">
 
-        </ImageButton>
         <ImageButton
             android:id="@+id/ibDangXuat"
             android:layout_width="0dp"

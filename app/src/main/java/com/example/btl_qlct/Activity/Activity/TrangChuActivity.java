@@ -47,7 +47,6 @@ public class TrangChuActivity extends AppCompatActivity {
     private ImageButton ibHome,ibHanMuc,ibThongKe,ibDangXuat, ibThem, ibSua, ibXoa;
     private  EditText edSearch;
     RecyclerView recyclerView;
-
     CTadapter cTadapter;
 
     DatePickerDialog datePickerDialog;
@@ -62,9 +61,6 @@ public class TrangChuActivity extends AppCompatActivity {
         unitUi();
         unitUilistener();
         getList();
-
-
-
     }
 
     private void unitUi(){
@@ -76,7 +72,6 @@ public class TrangChuActivity extends AppCompatActivity {
         ibSua = findViewById(R.id.ibSua);
         ibXoa = findViewById(R.id.ibXoa);
         edSearch= findViewById(R.id.edSearch);
-
 
         recyclerView = findViewById(R.id.ls_chitieu);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
@@ -90,11 +85,13 @@ public class TrangChuActivity extends AppCompatActivity {
         cTadapter = new CTadapter(chiTieuModelList, new CTadapter.iClick() {
             @Override
             public void clickSua(ChiTieuModel chiTieuModel) {
+
                 dialogSua(chiTieuModel);
             }
 
             @Override
             public void clickXoa(ChiTieuModel chiTieuModel) {
+
                 dialogXoa(chiTieuModel);
             }
         });
@@ -149,8 +146,6 @@ public class TrangChuActivity extends AppCompatActivity {
                     }
                 }
                 cTadapter.notifyDataSetChanged();
-
-
             }
 
             @Override
