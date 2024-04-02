@@ -64,12 +64,7 @@
 
     </LinearLayout>
 
-    <com.github.mikephil.charting.charts.LineChart
-        android:id="@+id/lineChart"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:layout_marginBottom="10dp"/>
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -130,14 +125,7 @@
             android:layout_weight="1"
             android:src="@drawable/baseline_equalizer_24">
         </ImageButton>
-        <ImageButton
-            android:id="@+id/ibHanMuc"
-            android:layout_width="0dp"
-            android:layout_height="70dp"
-            android:layout_weight="1"
-            android:src="@drawable/baseline_apps_24">
 
-        </ImageButton>
         <ImageButton
             android:id="@+id/ibDangXuat"
             android:layout_width="0dp"
