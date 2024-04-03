@@ -7,8 +7,6 @@ public class ChiTieuModel {
 
     String khoanchi, mota, ngay, id_nguoidung, sotien, id_chitieu;
 
-
-
     public ChiTieuModel(){
 
     }
@@ -78,7 +76,6 @@ public class ChiTieuModel {
         map.put("ngay", ngay);
         map.put("sotien", sotien);
         //map.put("id_nguoidung", id_nguoidung);
-
 
         return map;
     }

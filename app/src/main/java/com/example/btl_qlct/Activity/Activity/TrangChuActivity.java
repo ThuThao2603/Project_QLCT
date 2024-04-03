@@ -271,8 +271,6 @@ public class TrangChuActivity extends AppCompatActivity {
 
     }
 
-
-    //
     private void  dialogXoa(ChiTieuModel chiTieuModel) {
         Dialog dialog = new Dialog(TrangChuActivity.this);
         dialog.setContentView(R.layout.dialog_xoa);
@@ -307,7 +305,6 @@ public class TrangChuActivity extends AppCompatActivity {
             }
         });
         dialog.show();
-
     }
     private void unitUilistener(){
         ibDangXuat.setOnClickListener(new View.OnClickListener() {
@@ -340,21 +337,17 @@ public class TrangChuActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
         edSearch.addTextChangedListener(new TextWatcher() {
             @Override
             //trc khi thay đổi
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
             }
-
             @Override
             //khi thay đổi
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 //charSequence s = charSequence constraint
                 cTadapter.getFilter().filter(s);
             }
-
             @Override
             //sau khi thay đổi
             public void afterTextChanged(Editable s) {
